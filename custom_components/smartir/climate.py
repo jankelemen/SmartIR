@@ -120,7 +120,7 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
 
         valid_hvac_modes = [x for x in device_data['operationModes'] if x in HVAC_MODES]
 
-        self._operation_modes = [HVACMode.OFF] + ['ca'] + valid_hvac_modes
+        self._operation_modes = [HVACMode.OFF] + valid_hvac_modes
         self._fan_modes = device_data['fanModes']
         self._swing_modes = device_data.get('swingModes')
         self._commands = device_data['commands']
